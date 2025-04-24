@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Viewer</title>
     <style>
         body {
@@ -15,7 +16,10 @@
 
         .pdf-container {
             width: 100%;
-            height: 90vh;
+            height: 80vh; /* Ensure it adjusts on smaller screens */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .button-container {
@@ -37,12 +41,18 @@
         .download-button:hover {
             background-color: #0056b3;
         }
+
+        @media (max-width: 600px) {
+            .pdf-container {
+                height: 60vh; /* Make it a little shorter on mobile */
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="pdf-container">
-        <embed src="MembershipForm.pdf" type="application/pdf" width="100%" height="100%">
+        <embed src="MembershipFOrm.pdf" type="application/pdf" width="100%" height="100%">
     </div>
 
     <div class="button-container">
